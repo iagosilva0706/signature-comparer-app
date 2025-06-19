@@ -435,7 +435,8 @@
                 const base64ImageData2 = processedCanvasToBase64(processedCanvas2);
 
                 let chatHistory = [];
-                const prompt = "Compare these two signature images. Image 1 is the 'Collected Signature' and Image 2 is the 'Database Signature'. These signatures are from the same person. Evaluate their similarity and provide a similarity percentage (0-100) and a very brief reason for the similarity/dissimilarity. Focus on general appearance, stroke patterns, and overall shape. Do not output anything else, only the JSON.";
+                // IMPORTANT CHANGE: Removed the biasing phrase "These signatures are from the same person."
+                const prompt = "Compare these two signature images. Image 1 is the 'Collected Signature' and Image 2 is the 'Database Signature'. Evaluate their similarity and provide a similarity percentage (0-100) and a very brief reason for the similarity/dissimilarity. Focus on general appearance, stroke patterns, and overall shape. Do not output anything else, only the JSON.";
 
                 const payload = {
                     contents: [
