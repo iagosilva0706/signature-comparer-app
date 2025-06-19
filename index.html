@@ -471,7 +471,7 @@
                     }
                 };
 
-                const apiKey = ""; // If you want to use models other than gemini-2.0-flash or imagen-3.0-generate-002, provide an API key here. Otherwise, leave this as-is.
+                const apiKey = "AIzaSyAw7hBmygmU4fCx3qGVzjcN9j04o4ANqbc"; // IMPORTANT: Replace with your actual Gemini API Key when deploying publicly!
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
                 const response = await fetch(apiUrl, {
@@ -507,7 +507,7 @@
                     showMessageBox(`AI analysis complete. Note: This is a simulated AI comparison.`, false);
 
                 } else {
-                    showMessageBox('AI analysis failed: Unexpected response from API.', true);
+                    showMessageBox('AI analysis failed: Unexpected response from API. Check browser console for details.', true);
                     console.error('AI analysis failed:', result);
                     similarityScoreElem.textContent = 'Score: Error';
                     matchResultElem.textContent = 'Error during analysis.';
@@ -515,7 +515,7 @@
 
             } catch (error) {
                 console.error('Error during AI comparison:', error);
-                showMessageBox('Failed to connect to AI for comparison. Please try again later.', true);
+                showMessageBox('Failed to connect to AI for comparison. Ensure your API key is correctly configured and there are no network issues.', true);
                 similarityScoreElem.textContent = 'Score: Error';
                 matchResultElem.textContent = 'Error during analysis.';
             } finally {
